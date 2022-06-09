@@ -35,7 +35,7 @@
   color: "cfd3d7"
   description: "Not going to implement soon"
 - name: "testing"
-  color: "6a4a6f"
+  color: "e0a381"
   description: "Adding, updating or removing tests"
 - name: "wontfix"
   color: "ffffff"
