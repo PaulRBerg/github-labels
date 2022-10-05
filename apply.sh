@@ -18,3 +18,4 @@ github-label-sync --access-token $GITHUB_TOKEN --labels ./labels.yaml sablierhq/
 github-label-sync --access-token $GITHUB_TOKEN --labels ./labels.yaml sablierhq/safe-app
 github-label-sync --access-token $GITHUB_TOKEN --labels ./labels.yaml sablierhq/subgraph
 github-label-sync --access-token $GITHUB_TOKEN --labels ./labels.yaml sablierhq/v2-core
+github-label-sync --access-token $GITHUB_TOKEN --labels ./labels.yaml sablierhq/v2-interfaces
