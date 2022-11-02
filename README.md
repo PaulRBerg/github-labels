@@ -19,25 +19,17 @@ And make sure that you have your GitHub token set in the environment variable `G
 To apply the basic labels to all repos:
 
 ```sh
-$ ./apply.s
+$ ./apply.sh
 ```
+
 
 To apply the basic labels to one particular repo:
 
 ```sh
-github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./priorities.yml owner/repo
+github-label-sync --access-token $GITHUB_TOKEN --labels ./priorities.yml owner/repo
 ```
 
-### Priority Labels
+WARNING: running these scripts will overwrite any existing labels in the repo, and will also delete the labels that are
+not listed in the YAML files.
 
-To apply the priority labels to all repos:
-
-```sh
-$ ./apply.s
-```
-
-To apply the priority labels to one particular repo:
-
-```sh
-github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./priorities.yml owner/repo
-```
+If you would like not to not delete the existing labels, you can use the `--allow-added-labels` flag.
