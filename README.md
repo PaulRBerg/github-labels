@@ -22,11 +22,10 @@ To apply the basic labels to all repos:
 $ ./apply.sh
 ```
 
-
 To apply the basic labels to one particular repo:
 
 ```sh
-github-label-sync --access-token $GITHUB_TOKEN --labels ./priorities.yml owner/repo
+github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./priorities.yml owner/repo
 ```
 
 WARNING: running these scripts will overwrite any existing labels in the repo, and will also delete the labels that are
