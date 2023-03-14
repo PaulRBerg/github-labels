@@ -28,7 +28,6 @@ To apply the basic labels to one particular repo:
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./priorities.yml owner/repo
 ```
 
-WARNING: running these scripts will overwrite any existing labels in the repo, and will also delete the labels that are
-not listed in the YAML files.
+Running these scripts will NOT overwrite any existing labels in the repo.
 
-If you would like not to not delete the existing labels, you can use the `--allow-added-labels` flag.
+If you want to overwrite the labels, and also delete the labels that are not listed in the YAML files, remove the `--allow-added-labels` flag.
