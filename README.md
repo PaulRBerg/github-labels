@@ -14,18 +14,16 @@ And make sure that you have your GitHub token set in the environment variable `G
 
 ## Usage
 
-### Basic Labels
-
-To apply the basic labels to all repos:
+To apply the labels to all repos:
 
 ```sh
 $ ./apply.sh
 ```
 
-To apply the basic labels to one particular repo:
+To apply the labels to one particular repo:
 
 ```sh
-github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./priorities.yml owner/repo
+github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml owner/repo
 ```
 
 Running these scripts will NOT overwrite any existing labels in the repo.
