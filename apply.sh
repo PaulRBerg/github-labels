@@ -16,6 +16,7 @@ github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./l
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/typescript-template
 
 # Sablier
+github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/community-token-list
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/examples
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/sablier-v2-integration-template
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/subgraph
