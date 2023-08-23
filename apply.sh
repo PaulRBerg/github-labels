@@ -29,4 +29,5 @@ github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./l
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/v2-docs
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/v2-interfaces
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/v2-periphery
+github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/v2-sandbox
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/v2-subgraphs
