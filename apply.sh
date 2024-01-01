@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 # Personal
-github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/create-eth-app
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/evm-bn
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/foundry-template
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/hardhat-packager
