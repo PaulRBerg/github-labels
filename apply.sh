@@ -2,6 +2,7 @@
 
 # Personal
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/evm-bn
+github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/foundry-multibuild
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/foundry-template
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/hardhat-packager
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/hardhat-template
@@ -17,6 +18,8 @@ github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./l
 # Sablier
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/community-token-list
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/examples
+github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/multi-gitter-scripts
+github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/sablier-labs.github.io
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/sablier-v2-integration-template
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/sabvm
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml sablier-labs/subgraph
