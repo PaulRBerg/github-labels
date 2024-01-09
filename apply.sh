@@ -9,6 +9,7 @@ github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./l
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/javascript-template
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/multisol
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/prb-contracts
+github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/prb-longevity
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/prb-math
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/prb-proxy
 github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml PaulRBerg/prb-test
