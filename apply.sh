@@ -18,6 +18,7 @@ REPOS=(
   "PaulRBerg/hardhat-template"
   "PaulRBerg/javascript-template"
   "PaulRBerg/multisol"
+  "PaulRBerg/PaulRBerg.github.io"
   "PaulRBerg/prb-contracts"
   "PaulRBerg/prb-longevity"
   "PaulRBerg/prb-math"
