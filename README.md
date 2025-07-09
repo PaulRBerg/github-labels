@@ -1,42 +1,43 @@
 # GitHub Labels
 
-Useful for synchronizing labels across GitHub repositories. See
-[github-label-sync](https://github.com/Financial-Times/github-label-sync/).
+Synchronizing the GitHub labels across repositories.
+
+This repo relies upon the [`github-label-sync`](https://github.com/Financial-Times/github-label-sync) npm package.
 
 ## Pre Requisites
 
-Install the following package with npm:
+Install the following package:
 
 ```sh
-npm install --global github-label-sync
+npm install -g github-label-sync
 ```
+
+Install [`just`](https://github.com/casey/just) command runner.
 
 And have your GitHub token set in the environment variable `GITHUB_TOKEN`. The token must have the `repo` and
 `public_repo` scopes.
 
 ## Usage
 
+Run`just --list` to see the available commands.
+
 To apply the labels to all repos:
 
 ```sh
-$ ./apply.sh
+just apply-all
 ```
 
 To apply the labels to one particular repo:
 
 ```sh
-github-label-sync --access-token $GITHUB_TOKEN --allow-added-labels --labels ./labels.yml owner/repo
+just apply-repo owner/repo
 ```
 
-Running these scripts will NOT overwrite any existing labels in the repo.
+## Configuration
 
-If you want to overwrite the labels, and also delete the labels that are not listed in the YAML files, remove the
-`--allow-added-labels` flag.
-
-```sh
-github-label-sync --access-token $GITHUB_TOKEN --labels ./labels.yml owner/repo
-```
+Labels are defined in `labels/default.yml`. The `just apply-repo` command will preserve existing labels in the
+repository, while `just apply-repo-overwrite` will delete any labels not listed in the YAML file.
 
 > [!WARNING]
 >
-> The last command will delete any labels that are not listed in the YAML files. Use with caution.
+> The `apply-repo-overwrite` command will delete any labels that are not listed in the YAML files. Use with caution.
