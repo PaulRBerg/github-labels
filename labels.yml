@@ -51,7 +51,7 @@
   description: "New feature or request."
 - name: "type: perf"
   color: "f9904f"
-  description: "Change that improves performance."
+  description: "Change that improves performance or user experience."
 - name: "type: refactor"
   color: "c5def5"
   description: "Change that neither fixes a bug nor adds a feature."
