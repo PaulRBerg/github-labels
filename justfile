@@ -65,6 +65,7 @@ apply-all-impl:
         "PaulRBerg/hardhat-template"
         "PaulRBerg/javascript-template"
         "PaulRBerg/multisol"
+        "PaulRBerg/next-template",
         "PaulRBerg/PaulRBerg.github.io"
         "PaulRBerg/prb-contracts"
         "PaulRBerg/prb-longevity"
