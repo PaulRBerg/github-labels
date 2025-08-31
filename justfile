@@ -58,6 +58,7 @@ apply-all-impl:
     #!/usr/bin/env sh
     repos=(
         "PaulRBerg/cryptfolio-scripts"
+        "PaulRBerg/dot-claude"
         "PaulRBerg/evm-bn"
         "PaulRBerg/foundry-multibuild"
         "PaulRBerg/foundry-template"
