@@ -72,6 +72,7 @@ apply-all-impl:
         "PaulRBerg/prb-longevity"
         "PaulRBerg/prb-math"
         "PaulRBerg/prb-proxy"
+        "PaulRBerg/prb-pulse"
         "PaulRBerg/prb-test"
         "PaulRBerg/rust-template"
         "PaulRBerg/typescript-template"
