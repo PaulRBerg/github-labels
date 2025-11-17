@@ -1,4 +1,5 @@
 set shell := ["bash", "-euo", "pipefail", "-c"]
+set unstable
 
 # ---------------------------------------------------------------------------- #
 #                                 DEPENDENCIES                                 #
@@ -54,8 +55,8 @@ show-labels:
 
 # Apply default labels to all repositories
 [private]
+[script]
 apply-all-impl:
-    #!/usr/bin/env sh
     repos=(
         "PaulRBerg/cryptfolio-scripts"
         "PaulRBerg/dot-claude"
