@@ -31,6 +31,9 @@
 #
 # Type
 #
+- name: "type: ai"
+  color: "ff1493"
+  description: "AI-related features or changes."
 - name: "type: bug"
   color: "d73a4a"
   description: "Something isn't working."
