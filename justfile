@@ -24,11 +24,12 @@ default:
     @just --list
 
 # Apply default labels to all repositories, preserving existing labels
-[confirm("This will sync GitHub labels across all repositories. Continue? y/n")]
+[confirm("This will sync GitHub labels across all repositories. Continue? y/N")]
 @apply-all:
     just apply-all-impl
 
 # Apply default labels to a specific repository, preserving existing labels
+[confirm("This will sync GitHub labels to the specified repository. Continue? y/N")]
 apply-repo repo:
     github-label-sync \
         --access-token {{ GITHUB_TOKEN }} \
@@ -37,7 +38,7 @@ apply-repo repo:
         {{repo}}
 
 # Apply default labels to a specific repository, overwriting existing labels
-[confirm("WARNING: This will delete any labels not listed in labels.yml! Continue? y/n")]
+[confirm("WARNING: This will delete any labels not listed in labels.yml! Continue? y/N")]
 apply-repo-overwrite repo:
     github-label-sync \
         --access-token {{ GITHUB_TOKEN }} \
