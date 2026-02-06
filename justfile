@@ -12,6 +12,7 @@ github-label-sync := require("github-label-sync")
 #                                   CONSTANTS                                  #
 # ---------------------------------------------------------------------------- #
 
+OWNER := "PaulRBerg"
 LABELS_DEFAULT := "./labels/default.yml"
 GITHUB_TOKEN := env("GITHUB_TOKEN")
 
@@ -35,7 +36,7 @@ apply-repo repo:
         --access-token {{ GITHUB_TOKEN }} \
         --allow-added-labels \
         --labels {{ LABELS_DEFAULT }} \
-        {{repo}}
+        {{ OWNER }}/{{ repo }}
 
 # Apply default labels to a specific repository, overwriting existing labels
 [confirm("WARNING: This will delete any labels not listed in labels.yml! Continue? y/N")]
@@ -43,7 +44,7 @@ apply-repo-overwrite repo:
     github-label-sync \
         --access-token {{ GITHUB_TOKEN }} \
         --labels {{ LABELS_DEFAULT }} \
-        {{repo}}
+        {{ OWNER }}/{{ repo }}
 
 # Show default labels
 show-labels:
@@ -59,32 +60,32 @@ show-labels:
 [script]
 apply-all-impl:
     repos=(
-        "PaulRBerg/cryptfolio-scripts"
-        "PaulRBerg/dot-claude"
-        "PaulRBerg/evm-bn"
-        "PaulRBerg/foundry-multibuild"
-        "PaulRBerg/foundry-template"
-        "PaulRBerg/hardhat-packager"
-        "PaulRBerg/hardhat-template"
-        "PaulRBerg/javascript-template"
-        "PaulRBerg/multisol"
-        "PaulRBerg/next-template",
-        "PaulRBerg/PaulRBerg.github.io"
-        "PaulRBerg/prb-contracts"
-        "PaulRBerg/prb-longevity"
-        "PaulRBerg/prb-math"
-        "PaulRBerg/prb-proxy"
-        "PaulRBerg/prb-pulse"
-        "PaulRBerg/prb-test"
-        "PaulRBerg/rust-template"
-        "PaulRBerg/typescript-template"
+        "cryptfolio-scripts"
+        "dot-claude"
+        "evm-bn"
+        "foundry-multibuild"
+        "foundry-template"
+        "hardhat-packager"
+        "hardhat-template"
+        "javascript-template"
+        "multisol"
+        "next-template"
+        "PaulRBerg.github.io"
+        "prb-contracts"
+        "prb-longevity"
+        "prb-math"
+        "prb-proxy"
+        "prb-pulse"
+        "prb-test"
+        "rust-template"
+        "typescript-template"
     )
 
     for repo in "${repos[@]}"; do
-        echo "Syncing labels for $repo..."
+        echo "Syncing labels for {{ OWNER }}/$repo..."
         github-label-sync \
             --access-token {{ GITHUB_TOKEN }} \
             --allow-added-labels \
             --labels {{ LABELS_DEFAULT }} \
-            "$repo"
+            "{{ OWNER }}/$repo"
     done
