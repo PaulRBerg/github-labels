@@ -60,26 +60,36 @@ show-labels:
 [script]
 apply-all-impl:
     repos=(
+        "agent-skills"
         "cryptfolio-scripts"
+        "devkit"
+        "dot-agents"
         "dot-claude"
+        "dot-codex"
+        "dotfiles"
         "evm-bn"
+        "evm-sweeper"
         "foundry-multibuild"
         "foundry-template"
         "hardhat-packager"
         "hardhat-template"
         "javascript-template"
+        "markdrop"
         "multisol"
         "next-template"
         "PaulRBerg.github.io"
         "prb-contracts"
+        "prb-effect"
+        "prb-iac"
         "prb-longevity"
         "prb-math"
         "prb-proxy"
-        "prb-pulse"
+        "prb-site"
         "prb-test"
-        "prb-taxes"
         "rust-template"
+        "tw-next-image"
         "typescript-template"
+        "vscode-dictionary"
     )
 
     for repo in "${repos[@]}"; do
