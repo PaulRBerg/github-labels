@@ -5,8 +5,11 @@ set unstable
 #                                 DEPENDENCIES                                 #
 # ---------------------------------------------------------------------------- #
 
-# https://github.com/Financial-Times/github-label-sync
-github-label-sync := require("github-label-sync")
+# https://cli.github.com
+gh := require("gh")
+
+# https://github.com/mikefarah/yq
+yq := require("yq")
 
 # ---------------------------------------------------------------------------- #
 #                                   CONSTANTS                                  #
@@ -14,7 +17,7 @@ github-label-sync := require("github-label-sync")
 
 OWNER := "PaulRBerg"
 LABELS_DEFAULT := "./labels/default.yml"
-GITHUB_TOKEN := env("GITHUB_TOKEN")
+SYNC_LABELS := "./scripts/sync-labels.sh"
 
 # ---------------------------------------------------------------------------- #
 #                                    RECIPES                                   #
@@ -32,19 +35,16 @@ default:
 # Apply default labels to a specific repository, preserving existing labels
 [confirm("This will sync GitHub labels to the specified repository. Continue? y/N")]
 apply-repo repo:
-    github-label-sync \
-        --access-token {{ GITHUB_TOKEN }} \
-        --allow-added-labels \
-        --labels {{ LABELS_DEFAULT }} \
-        {{ OWNER }}/{{ repo }}
+    {{ SYNC_LABELS }} {{ LABELS_DEFAULT }} {{ OWNER }}/{{ repo }}
 
-# Apply default labels to a specific repository, overwriting existing labels
+# Apply default labels to a specific repository, deleting labels not in labels.yml
 [confirm("WARNING: This will delete any labels not listed in labels.yml! Continue? y/N")]
 apply-repo-overwrite repo:
-    github-label-sync \
-        --access-token {{ GITHUB_TOKEN }} \
-        --labels {{ LABELS_DEFAULT }} \
-        {{ OWNER }}/{{ repo }}
+    {{ SYNC_LABELS }} --prune {{ LABELS_DEFAULT }} {{ OWNER }}/{{ repo }}
+
+# Preview what a sync would change in a specific repository
+dry-run repo:
+    {{ SYNC_LABELS }} --dry-run {{ LABELS_DEFAULT }} {{ OWNER }}/{{ repo }}
 
 # Show default labels
 show-labels:
@@ -77,15 +77,12 @@ apply-all-impl:
         "prb-proxy"
         "prb-pulse"
         "prb-test"
+        "prb-taxes"
         "rust-template"
         "typescript-template"
     )
 
     for repo in "${repos[@]}"; do
         echo "Syncing labels for {{ OWNER }}/$repo..."
-        github-label-sync \
-            --access-token {{ GITHUB_TOKEN }} \
-            --allow-added-labels \
-            --labels {{ LABELS_DEFAULT }} \
-            "{{ OWNER }}/$repo"
+        {{ SYNC_LABELS }} {{ LABELS_DEFAULT }} "{{ OWNER }}/$repo"
     done

@@ -2,20 +2,17 @@
 
 Synchronizing the GitHub labels across repositories.
 
-This repo relies upon the [`github-label-sync`](https://github.com/Financial-Times/github-label-sync) npm package.
+This repo relies upon a bespoke shell script (`scripts/sync-labels.sh`) that talks to the GitHub API via the
+[`gh`](https://cli.github.com) CLI.
 
 ## Pre Requisites
 
-Install the following package:
+Install the following tools:
 
-```sh
-npm install -g github-label-sync
-```
-
-Install [`just`](https://github.com/casey/just) command runner.
-
-And have your GitHub token set in the environment variable `GITHUB_TOKEN`. The token must have the `repo` and
-`public_repo` scopes.
+- [`gh`](https://cli.github.com) — GitHub CLI, authenticated via `gh auth login` or a `GITHUB_TOKEN` environment
+  variable with the `repo` scope
+- [`yq`](https://github.com/mikefarah/yq) — YAML processor
+- [`just`](https://github.com/casey/just) — command runner
 
 ## Usage
 
@@ -30,7 +27,13 @@ just apply-all
 To apply the labels to one particular repo:
 
 ```sh
-just apply-repo owner/repo
+just apply-repo my-repo
+```
+
+To preview what a sync would change without touching anything:
+
+```sh
+just dry-run my-repo
 ```
 
 ## Configuration
